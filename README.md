@@ -1,2 +1,2 @@
-# GCP-Class_Notes
+# GCP Class Notes
 Class Notes
