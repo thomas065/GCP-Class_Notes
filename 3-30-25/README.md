@@ -40,6 +40,7 @@ The goal is to:
 - **Tokyo**:
   - Create the instance with a **Debian** OS.
   - Use the provided script (saved in your favorites) to serve a homepage.
+  [Sample Startup Script](https://github.com/thomas065/GCP-startup-script-template/blob/main/new-class-template.sh)
 
 ---
 
