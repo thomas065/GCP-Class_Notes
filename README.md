@@ -8,4 +8,4 @@ This repository contains my personal notes, hands-on exercises, and setup steps 
 - Real-world scenarios for **multi-region VM access**, **RDP sessions**, and **ICMP communication**
 - Security best practices (like avoiding the default network) and platform-specific tooling like **Kubernetes**
 
-These notes are part of my learning journey as I prepare for GCP certifications and move from Power Platform development into a career in **Google Cloud Security Engineering**.
+These notes are part of my learning, they build on each other so that in my journey as I prepare for GCP certifications and move from Power Platform development into a career in **Google Cloud Security Engineering**.
