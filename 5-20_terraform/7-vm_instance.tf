@@ -13,7 +13,7 @@ resource "google_compute_instance" "twism-instance" {
   }
 
   network_interface {
-    network = google_compute_network.twismnetwork.name
+    //network = google_compute_network.twismnetwork.name
     subnetwork = google_compute_subnetwork.twism-hq1.name
     access_config {
       // Ephemeral public IP
