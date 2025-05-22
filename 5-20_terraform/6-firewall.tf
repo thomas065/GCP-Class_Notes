@@ -2,6 +2,7 @@
 resource "google_compute_firewall" "allow-ssh" {
   name    = "allow-ssh"
   network = google_compute_network.twismnetwork.name
+  direction = "INGRESS"
 
   allow {
     protocol = "tcp"
@@ -18,7 +19,7 @@ resource "google_compute_firewall" "allow-http" {
 
   allow {
     protocol = "tcp"
-    ports    = ["80"]
+    ports    = ["80", "443"]
   }
 
   source_ranges = ["0.0.0.0/0"]
