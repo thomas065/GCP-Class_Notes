@@ -12,32 +12,53 @@ resource "google_compute_firewall" "allow-ssh" {
   source_ranges = ["0.0.0.0/0"]
 }
 
-// http
-resource "google_compute_firewall" "allow-http" {
-  name    = "allow-http"
+// tags
+resource "google_compute_firewall" "allow-tag" {
+  name    = "allow-tag"
   network = google_compute_network.twismnetwork.name
-
-  allow {
-    protocol = "tcp"
-    ports    = ["80", "443"]
-  }
-
-  source_ranges = ["0.0.0.0/0"]
-}
-
-// icmp
-resource "google_compute_firewall" "icmp" {
-  name    = "icmp"
-  network = google_compute_network.twismnetwork.name
-
-  allow {
-    protocol = "icmp"
-  }
 
   allow {
     protocol = "tcp"
     ports    = ["80"]
   }
 
-  source_tags = ["web"]
+  target_tags = [ "web" ]
+
+  source_ranges = [ "0.0.0.0/0" ]
 }
+
+// http
+# resource "google_compute_firewall" "allow-http" {
+#   name    = "allow-http"
+#   network = google_compute_network.twismnetwork.name
+
+#   allow {
+#     protocol = "tcp"
+#     ports    = ["80"]
+#   }
+
+#   source_ranges = ["0.0.0.0/0"]
+# }
+
+// https
+# resource "google_compute_firewall" "allow-https" {
+#   name    = "allow-https"
+#   network = google_compute_network.twismnetwork.name
+
+#   allow {
+#     protocol = "tcp"
+#     ports    = [ "443"]
+#   }
+
+#   source_ranges = ["0.0.0.0/0"]
+# }
+
+// icmp
+# resource "google_compute_firewall" "icmp" {
+#   name    = "icmp"
+#   network = google_compute_network.twismnetwork.name
+
+#   allow {
+#     protocol = "icmp"
+#   }
+# }
