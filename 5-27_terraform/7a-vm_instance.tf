@@ -20,7 +20,7 @@
      }
    }
 
-   metadata_startup_script = file("./website/index.sh")
+   metadata_startup_script = file("./website/index2.sh")
  }
 
 # Tokyo Virtual Machine

@@ -2,7 +2,7 @@
 # Datasource: Get a list of Google Compute zones that are UP in a region
 data "google_compute_zones" "available" {
   status = "UP"
-  #region = "" (optional if provider default is set)
+  #region = "us-central1" // (optional if provider default is set)
 }
 
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_region_instance_group_manager

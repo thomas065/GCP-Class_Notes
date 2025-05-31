@@ -5,7 +5,7 @@
  # Iowa Instance Template
 resource "google_compute_region_instance_template" "app" {
   name         = "twism-template-instance"
-  region       = "us-central1"
+  region       = google_compute_subnetwork.twism-hq1.region
   description  = "This template is used to clone twism"
   machine_type = "e2-medium"
   tags = ["web"] // don't forget to use tags if firewall has it
@@ -25,16 +25,17 @@ resource "google_compute_region_instance_template" "app" {
   }
 
  # Install Webserver using file() function
-  metadata_startup_script = file("./website/index.sh")
+  metadata_startup_script = file("./website/index2.sh")
 }
 #################################################################################
 
 # Tokyo Instance Template
 resource "google_compute_region_instance_template" "app2" {
   name         = "tokyo-template-instance"
-  region       = "asia-northeast1"
+  region       = google_compute_subnetwork.tokyo-hq1.region
   description  = "This template is used to clone tokyo-hq1"
   machine_type = "e2-medium"
+  tags = ["tokyonetwork-web"] // don't forget to use tags if firewall has it
 
   disk {
     source_image = "debian-cloud/debian-12"
