@@ -1,4 +1,5 @@
 # https://www.terraform.io/language/settings/backends/gcs
+# https://registry.terraform.io/providers/hashicorp/google/latest // latest version for required providers
 terraform {
   backend "gcs" {
     bucket      = "terraformblues"

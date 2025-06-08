@@ -25,5 +25,5 @@ resource "google_compute_region_instance_template" "app" {
   }
 
  # Install Webserver using file() function
-  metadata_startup_script = file("./website/index2.sh")
+  metadata_startup_script = file("./website/index.sh")
 }
